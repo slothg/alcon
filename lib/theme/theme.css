@@ -1,0 +1,723 @@
+AccordionHeader
+{
+	disabledSkin: Embed(source="theme.swf", symbol="AccordionHeader_disabledSkin");
+	downSkin: Embed(source="theme.swf", symbol="AccordionHeader_downSkin");
+	overSkin: Embed(source="theme.swf", symbol="AccordionHeader_overSkin");
+	selectedDisabledSkin: Embed(source="theme.swf", symbol="AccordionHeader_disabledSkin");
+	selectedDownSkin: Embed(source="theme.swf", symbol="AccordionHeader_downSkin");
+	selectedOverSkin: Embed(source="theme.swf", symbol="AccordionHeader_overSkin");
+	selectedUpSkin: Embed(source="theme.swf", symbol="AccordionHeader_upSkin");
+	upSkin: Embed(source="theme.swf", symbol="AccordionHeader_upSkin");
+}
+
+Accordion
+{
+	openDuration: 50;
+}
+
+Alert
+{
+	closeButtonDisabledSkin: Embed(source="theme.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="theme.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="theme.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="theme.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="theme.swf", symbol="PanelTitleBackground");
+	color: #FF5500;
+	backgroundColor: #484848;
+	backgroundAlpha: 1.0;
+	borderThickness: 1;
+	borderColor: #303030;
+	borderAlpha: 1.0;
+	borderStyle: solid;
+	shadowDirection: "right";
+	titleStyleName: "titleWindowTitle";
+	cornerRadius: 4;
+}
+
+Application 
+{
+	backgroundColor: #484848;
+	backgroundGradientColors: #484848, #484848;
+	backgroundGradientAlphas: 1, 1;
+	themeColor: #444444;
+	color: #CCCCCC;
+	text-roll-over-color: #AAAAAA;
+	text-selected-color: #AAAAAA;
+	fontSize: 11;
+	font-anti-alias-type: advanced;
+	disabled-overlay-alpha: 0;
+	modalTransparency: 0.2;
+	modalTransparencyBlur: 0;
+	modalTransparencyColor: #000000;
+	modalTransparencyDuration: 100;
+}
+
+ApplicationControlBar
+{
+	highlightAlphas: 0.3, 0.0;
+	fillAlphas: 0.2, 0.2;
+	backgroundColor: #FFFFFF;
+	backgroundAlpha: 0.1;
+	dropShadowEnabled: false;
+	cornerRadius: 0;
+}
+
+Button
+{
+	disabledSkin: Embed(source="theme.swf", symbol="Button_disabledSkin");
+	downSkin: Embed(source="theme.swf", symbol="Button_downSkin");
+	overSkin: Embed(source="theme.swf", symbol="Button_overSkin");
+	upSkin: Embed(source="theme.swf", symbol="Button_upSkin");
+	color: #CCCCCC;
+	disabledColor: #878787;
+	textRollOverColor: #FFFFFF;
+	textSelectedColor: #000000;
+	themeColor: #FFA828;
+}
+
+ButtonBar 
+{ 
+	buttonStyleName: "buttonBarButton"; 
+	firstButtonStyleName: "firstButtonBarButton"; 
+	lastButtonStyleName: "lastButtonBarButton" 
+}
+
+ToggleButtonBar 
+{ 
+	buttonStyleName: "buttonBarButton"; 
+	firstButtonStyleName: "firstButtonBarButton"; 
+	lastButtonStyleName: "lastButtonBarButton" 
+}
+
+.firstButtonBarButton 
+{ 
+	disabledSkin: Embed(source="theme.swf", symbol="ButtonBar_firstDisabledSkin"); 
+	downSkin: Embed(source="theme.swf", symbol="ButtonBar_firstDownSkin"); 
+	overSkin: Embed(source="theme.swf", symbol="ButtonBar_firstOverSkin"); 
+	selectedDisabledSkin: Embed(source="theme.swf", symbol="ButtonBar_firstSelectedDisabledSkin"); 
+	selectedDownSkin: Embed(source="theme.swf", symbol="ButtonBar_firstSelectedUpSkin"); 
+	selectedOverSkin: Embed(source="theme.swf", symbol="ButtonBar_firstSelectedUpSkin");
+	selectedUpSkin: Embed(source="theme.swf", symbol="ButtonBar_firstSelectedUpSkin");
+	upSkin: Embed(source="theme.swf", symbol="ButtonBar_firstUpSkin"); 
+}
+
+.buttonBarButton 
+{ 
+	disabledSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonDisabledSkin"); 
+	downSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonDownSkin"); 
+	overSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonOverSkin"); 
+	selectedDisabledSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonSelectedDisabledSkin"); 
+	selectedDownSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonSelectedUpSkin"); 
+	selectedOverSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonSelectedUpSkin");
+	selectedUpSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonSelectedUpSkin");
+	upSkin: Embed(source="theme.swf", symbol="ButtonBar_buttonUpSkin"); 
+}
+
+.lastButtonBarButton 
+{ 
+	disabledSkin: Embed(source="theme.swf", symbol="ButtonBar_lastDisabledSkin"); 
+	downSkin: Embed(source="theme.swf", symbol="ButtonBar_lastDownSkin"); 
+	overSkin: Embed(source="theme.swf", symbol="ButtonBar_lastOverSkin"); 
+	selectedDisabledSkin: Embed(source="theme.swf", symbol="ButtonBar_lastSelectedDisabledSkin"); 
+	selectedDownSkin: Embed(source="theme.swf", symbol="ButtonBar_lastSelectedUpSkin"); 
+	selectedOverSkin: Embed(source="theme.swf", symbol="ButtonBar_lastSelectedUpSkin");
+	selectedUpSkin: Embed(source="theme.swf", symbol="ButtonBar_lastSelectedUpSkin");
+	upSkin: Embed(source="theme.swf", symbol="ButtonBar_lastUpSkin"); 
+}
+
+CheckBox
+{
+	disabledIcon: Embed(source="theme.swf", symbol="CheckBox_disabledIcon");
+	downIcon: Embed(source="theme.swf", symbol="CheckBox_downIcon");
+	overIcon: Embed(source="theme.swf", symbol="CheckBox_overIcon");
+	selectedDisabledIcon: Embed(source="theme.swf", symbol="CheckBox_selectedDisabledIcon");
+	selectedDownIcon: Embed(source="theme.swf", symbol="CheckBox_selectedDownIcon");
+	selectedOverIcon: Embed(source="theme.swf", symbol="CheckBox_selectedOverIcon");
+	selectedUpIcon: Embed(source="theme.swf", symbol="CheckBox_selectedUpIcon");
+	upIcon: Embed(source="theme.swf", symbol="CheckBox_upIcon");
+}		
+
+.closeButton
+{
+	disabledSkin: Embed(source="theme.swf", symbol="CloseButtonDisabled");
+	downSkin: Embed(source="theme.swf", symbol="CloseButtonDown");
+	overSkin: Embed(source="theme.swf", symbol="CloseButtonOver");
+	upSkin: Embed(source="theme.swf", symbol="CloseButtonUp");
+	cornerRadius: 2;
+}
+
+.maximizeButton
+{
+	disabledSkin: Embed(source="theme.swf", symbol="MaxButtonDisabled");
+	downSkin: Embed(source="theme.swf", symbol="MaxButtonDown");
+	overSkin: Embed(source="theme.swf", symbol="MaxButtonOver");
+	upSkin: Embed(source="theme.swf", symbol="MaxButtonUp");
+	cornerRadius: 2;
+}
+
+.restoreButton
+{
+	disabledSkin: Embed(source="theme.swf", symbol="RestoreButtonDisabled");
+	downSkin: Embed(source="theme.swf", symbol="RestoreButtonDown");
+	overSkin: Embed(source="theme.swf", symbol="RestoreButtonOver");
+	upSkin: Embed(source="theme.swf", symbol="RestoreButtonUp");
+	cornerRadius: 2;
+}
+
+ColorPicker
+{
+	openDuration: 30;
+}
+
+ComboBox
+{
+	disabledSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_disabledSkin");
+	downSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_downSkin");
+	editableDisabledSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_editableDisabledSkin");
+	editableDownSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_editableDownSkin");
+	editableOverSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_editableOverSkin");
+	editableUpSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_editableUpSkin");
+	overSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_overSkin");
+	upSkin: Embed(source="theme.swf", symbol="ComboBoxArrow_upSkin");
+	openDuration: 30;
+	closeDuration: 30;
+	cornerRadius: 3;
+}		
+
+ColorPicker
+{
+	disabledSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	downSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	overSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+	upSkin: ClassReference("mx.skins.halo.ColorPickerSkin");
+}
+
+CursorManager
+{
+	/* busyCursor: Embed(source="theme.swf", symbol="BusyCursor"); */
+	/* busyCursorBackground: Embed(source="theme.swf",symbol="BusyCursor"); */
+}
+
+DataGrid
+{
+	columnDropIndicatorSkin: Embed(source="theme.swf", symbol="DataGrid_columnDropIndicatorSkin");
+	columnResizeSkin: Embed(source="theme.swf", symbol="DataGrid_columnResizeSkin");
+	headerSeparatorSkin: Embed(source="theme.swf", symbol="DataGrid_headerSeparatorSkin");
+	sortArrowSkin: Embed(source="theme.swf", symbol="DataGrid_sortArrowSkin");
+	stretchCursor: Embed(source="theme.swf",symbol="DividedBox_horizontalCursor");
+	alternatingItemColors: #9098a0, #959DA5;
+	headerColors: #64707c, #64707c;
+	horizontalGridLines: false;
+	horizontalGridLineColor: #707880;
+	verticalGridLineColor: #707880;
+	rollOverColor: #555F69;
+	textRollOverColor: #FFFFFF;
+	borderThickness: 1;
+	borderColor: #303030;
+	selectionColor: #404850;
+	color: #000000;
+	textSelectedColor: #ffa828;
+	headerStyleName: "dataGridHeaderStyle";
+}
+
+.dataGridHeaderStyle
+{
+	color: #b4c0cc;
+	fontWeight: bold;
+}
+
+DateChooser
+{
+	nextMonthDisabledSkin: Embed(source="theme.swf", symbol="DateChooser_nextMonthDisabledSkin");
+	nextMonthDownSkin: Embed(source="theme.swf", symbol="DateChooser_nextMonthDownSkin");
+	nextMonthOverSkin: Embed(source="theme.swf", symbol="DateChooser_nextMonthOverSkin");
+	nextMonthUpSkin: Embed(source="theme.swf", symbol="DateChooser_nextMonthUpSkin");
+	prevMonthDisabledSkin: Embed(source="theme.swf", symbol="DateChooser_prevMonthDisabledSkin");
+	prevMonthDownSkin: Embed(source="theme.swf", symbol="DateChooser_prevMonthDownSkin");
+	prevMonthOverSkin: Embed(source="theme.swf", symbol="DateChooser_prevMonthOverSkin");
+	prevMonthUpSkin: Embed(source="theme.swf", symbol="DateChooser_prevMonthUpSkin");
+	nextYearDisabledSkin: Embed(source="theme.swf", symbol="DateChooser_nextYearDisabledSkin");
+	nextYearDownSkin: Embed(source="theme.swf", symbol="DateChooser_nextYearDownSkin");
+	nextYearOverSkin: Embed(source="theme.swf", symbol="DateChooser_nextYearOverSkin");
+	nextYearUpSkin: Embed(source="theme.swf", symbol="DateChooser_nextYearUpSkin");
+	prevYearDisabledSkin: Embed(source="theme.swf", symbol="DateChooser_prevYearDisabledSkin");
+	prevYearDownSkin: Embed(source="theme.swf", symbol="DateChooser_prevYearDownSkin");
+	prevYearOverSkin: Embed(source="theme.swf", symbol="DateChooser_prevYearOverSkin");
+	prevYearUpSkin: Embed(source="theme.swf", symbol="DateChooser_prevYearUpSkin");
+	todayIndicatorSkin: Embed(source="theme.swf", symbol="DateChooser_todayIndicatorSkin");	
+	rollOverIndicatorSkin: Embed(source="theme.swf", symbol="DateChooser_rollOverIndicatorSkin");
+	selectionIndicatorSkin: Embed(source="theme.swf", symbol="DateChooser_selectionIndicatorSkin");
+}
+
+DateField
+{
+	disabledSkin: Embed(source="theme.swf",symbol="DateField_disabledSkin"); 
+	downSkin: Embed(source="theme.swf",symbol="DateField_downSkin"); 
+	overSkin: Embed(source="theme.swf",symbol="DateField_overSkin"); 
+	upSkin: Embed(source="theme.swf",symbol="DateField_upSkin"); 
+}
+
+DividedBox
+{
+	dividerSkin: Embed(source="theme.swf",symbol="DividedBox_dividerSkin");
+	horizontalCursor: Embed(source="theme.swf",symbol="DividedBox_horizontalCursor");
+	verticalCursor: Embed(source="theme.swf",symbol="DividedBox_verticalCursor");
+}
+
+DragManager
+{
+	copyCursor: Embed(source="theme.swf",symbol="DragManager_copyCursor");
+	defaultDragImageSkin: Embed(source="theme.swf", symbol="DragManager_defaultDragImageSkin");
+	linkCursor: Embed(source="theme.swf",symbol="DragManager_linkCursor");
+	moveCursor: Embed(source="theme.swf",symbol="DragManager_moveCursor");
+	rejectCursor: Embed(source="theme.swf",symbol="DragManager_rejectCursor");
+}
+
+Form
+{
+	horizontalGap: 4;
+	verticalGap: 4;
+}
+
+FormItem
+{
+	indicatorSkin: Embed(source="theme.swf",symbol="FormItem_indicatorSkin");  
+}
+
+GroupTitle
+{
+	fontSize: 11;
+	color: #BBBBBB;
+}
+
+HDividedBox
+{
+	dividerSkin: Embed(source="theme.swf",symbol="DividedBox_dividerSkin");
+	horizontalCursor: Embed(source="theme.swf",symbol="DividedBox_horizontalCursor");
+	verticalCursor: Embed(source="theme.swf",symbol="DividedBox_verticalCursor");
+	horizontalGap: 10;
+	dividerAffordance: 8;
+	dividerThickness: 2;
+}
+
+
+HSlider
+{
+	thumbDisabledSkin: Embed(source="theme.swf", symbol="HSliderThumb_disabledSkin");
+	thumbDownSkin: Embed(source="theme.swf", symbol="HSliderThumb_downSkin");
+	thumbOverSkin: Embed(source="theme.swf", symbol="HSliderThumb_overSkin");
+	thumbUpSkin: Embed(source="theme.swf", symbol="HSliderThumb_upSkin");
+	trackHighlightSkin: Embed(source="theme.swf", symbol="HSliderHighlight_Skin");
+	trackSkin: Embed(source="theme.swf", symbol="HSliderTrack_Skin");
+}
+
+HRule
+{
+	strokeWidth: 1;
+	strokeColor: #4E4E4E;
+	shadowColor: #686868;
+}
+
+Image
+{
+	brokenImageSkin: Embed(source="theme.swf",symbol="Loader_brokenImageSkin");
+}
+
+LinkBar
+{
+	borderStyle: solid;
+	borderColor: #686868;
+	borderThickness: 0;
+	separatorWidth: 1;
+	cornerRadius: 3;
+	backgroundAlpha: 0;
+	backgroundColor: #6c6c6c;
+	separatorColor: #686868;
+	color: #cccccc;
+	disabledColor: #ffa828;
+}
+
+LinkButton
+{
+	textAlign: left;
+	rollOverColor: #FFA827;
+	selectionColor: #FFA827;
+	textSelectedColor: #000000;
+	textRollOverColor: #303030;
+}
+
+List
+{
+	borderStyle: inset;
+}
+
+Loader
+{
+	brokenImageSkin: Embed(source="theme.swf",symbol="Loader_brokenImageSkin");
+}
+
+Menu
+{
+	branchIcon: Embed(source="theme.swf",symbol="Menu_branchIcon");
+	branchDisabledIcon: Embed(source="theme.swf",symbol="Menu_branchDisabledIcon");
+	checkIcon: Embed(source="theme.swf",symbol="Menu_checkIcon");
+	checkDisabledIcon: Embed(source="theme.swf",symbol="Menu_checkDisabledIcon");
+	radioIcon: Embed(source="theme.swf",symbol="Menu_radioIcon");
+	radioDisabledIcon: Embed(source="theme.swf",symbol="Menu_radioDisabledIcon");
+	separatorSkin: Embed(source="theme.swf",symbol="Menu_separatorSkin");
+	openDuration: 0.1;
+	selectionDuration: 0.1;
+	shadowDirection: right;
+	shadowDistance: 2;
+	backgroundColor: #6C6C6C;
+	borderStyle: solid;
+	borderThickness: 0;
+	color: #CCCCCC;
+	textRollOverColor: #FFFFFF;
+	textSelectedColor: #FFFFFF;
+	rollOverColor: #BBBBBB;
+	themeColor: #BBBBBB;
+}
+
+MenuBar
+{
+	backgroundSkin: Embed(source="theme.swf", symbol="MenuBar_backgroundSkin");
+	itemUpSkin: Embed(source="theme.swf", symbol="MenuBar_itemUpSkin");
+	itemOverSkin: Embed(source="theme.swf", symbol="MenuBar_itemOverSkin");
+	itemDownSkin: Embed(source="theme.swf", symbol="MenuBar_itemDownSkin");
+}
+
+NumericStepper
+{
+	downArrowDisabledSkin: Embed(source="theme.swf", symbol="NumericStepperDownArrow_DisabledSkin");
+	downArrowDownSkin: Embed(source="theme.swf", symbol="NumericStepperDownArrow_DownSkin");
+	downArrowOverSkin: Embed(source="theme.swf", symbol="NumericStepperDownArrow_OverSkin");
+	downArrowUpSkin: Embed(source="theme.swf", symbol="NumericStepperDownArrow_UpSkin");
+	upArrowDisabledSkin: Embed(source="theme.swf", symbol="NumericStepperUpArrow_DisabledSkin");
+	upArrowDownSkin: Embed(source="theme.swf", symbol="NumericStepperUpArrow_DownSkin");
+	upArrowOverSkin: Embed(source="theme.swf", symbol="NumericStepperUpArrow_OverSkin");
+	upArrowUpSkin: Embed(source="theme.swf", symbol="NumericStepperUpArrow_UpSkin");
+}
+
+Panel
+{
+	closeButtonDisabledSkin: Embed(source="theme.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="theme.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="theme.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="theme.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="theme.swf", symbol="PanelTitleBackground");
+	backgroundColor: #484848;
+	backgroundAlpha: 1.0;
+	borderThickness: 1;
+	borderColor: #303030;
+	borderAlpha: 1.0;
+	borderStyle: solid;
+	shadowDistance: 1;
+	shadowDirection: "right";
+	titleStyleName: "panelTitle";
+	cornerRadius: 4;
+	roundedBottomCorners: true;
+}
+
+.panelTitle
+{
+	fontWeight: bold;
+}
+
+PopUpButton
+{
+	disabledSkin: Embed(source="theme.swf", symbol="PopUpButton_DisabledSkin");
+	downSkin: Embed(source="theme.swf", symbol="PopUpButton_downSkin");
+	overSkin: Embed(source="theme.swf", symbol="PopUpButton_overSkin");	
+	popUpDownSkin: Embed(source="theme.swf", symbol="PopUpButton_popUpDownSkin");
+	popUpOverSkin: Embed(source="theme.swf", symbol="PopUpButton_popUpOverSkin");
+	upSkin: Embed(source="theme.swf", symbol="PopUpButton_upSkin");
+}
+
+ProgressBar
+{
+	barSkin: Embed(source="theme.swf", symbol="ProgressBarSkin");
+	indeterminateSkin: Embed(source="theme.swf", symbol="ProgressIndeterminateSkin");
+	trackSkin: Embed(source="theme.swf", symbol="ProgressTrackSkin");
+}
+
+RadioButton
+{
+	disabledIcon: Embed(source="theme.swf", symbol="RadioButton_disabledIcon");
+	downIcon: Embed(source="theme.swf", symbol="RadioButton_downIcon");
+	overIcon: Embed(source="theme.swf", symbol="RadioButton_overIcon");
+	selectedDisabledIcon: Embed(source="theme.swf", symbol="RadioButtonSelected_disabledIcon");
+	selectedDownIcon: Embed(source="theme.swf", symbol="RadioButtonSelected_downIcon");
+	selectedOverIcon: Embed(source="theme.swf", symbol="RadioButtonSelected_overIcon");
+	selectedUpIcon: Embed(source="theme.swf", symbol="RadioButtonSelected_upIcon");
+	upIcon: Embed(source="theme.swf", symbol="RadioButtonIcon");
+}
+
+RichTextEditor
+{
+	closeButtonDisabledSkin: Embed(source="theme.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="theme.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="theme.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="theme.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="theme.swf", symbol="PanelTitleBackground");
+}
+
+ScrollBar
+{
+	downArrowDisabledSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_disabledSkin");
+	downArrowDownSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_downSkin");
+	downArrowOverSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_overSkin");
+	downArrowUpSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_upSkin");
+	thumbDownSkin: Embed(source="theme.swf", symbol="ScrollThumb_downSkin");
+	thumbOverSkin: Embed(source="theme.swf", symbol="ScrollThumb_overSkin");
+	thumbUpSkin: Embed(source="theme.swf", symbol="ScrollThumb_upSkin");
+	trackSkin: Embed(source="theme.swf", symbol="ScrollTrack_Skin");
+	upArrowDisabledSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_disabledSkin");
+	upArrowDownSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_downSkin");
+	upArrowOverSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_overSkin");
+	upArrowUpSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_upSkin");
+}
+
+HScrollBar
+{
+	downArrowDisabledSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_disabledSkin");
+	downArrowDownSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_downSkin");
+	downArrowOverSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_overSkin");
+	downArrowUpSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_upSkin");
+	thumbDownSkin: Embed(source="theme.swf", symbol="ScrollThumb_downSkin");
+	thumbOverSkin: Embed(source="theme.swf", symbol="ScrollThumb_overSkin");
+	thumbUpSkin: Embed(source="theme.swf", symbol="ScrollThumb_upSkin");
+	trackSkin: Embed(source="theme.swf", symbol="ScrollTrack_Skin");
+	upArrowDisabledSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_disabledSkin");
+	upArrowDownSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_downSkin");
+	upArrowOverSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_overSkin");
+	upArrowUpSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_upSkin");
+}
+
+VScrollBar
+{
+	downArrowDisabledSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_disabledSkin");
+	downArrowDownSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_downSkin");
+	downArrowOverSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_overSkin");
+	downArrowUpSkin: Embed(source="theme.swf", symbol="ScrollArrowDown_upSkin");
+	thumbDownSkin: Embed(source="theme.swf", symbol="ScrollThumb_downSkin");
+	thumbOverSkin: Embed(source="theme.swf", symbol="ScrollThumb_overSkin");
+	thumbUpSkin: Embed(source="theme.swf", symbol="ScrollThumb_upSkin");
+	trackSkin: Embed(source="theme.swf", symbol="ScrollTrack_Skin");
+	upArrowDisabledSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_disabledSkin");
+	upArrowDownSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_downSkin");
+	upArrowOverSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_overSkin");
+	upArrowUpSkin: Embed(source="theme.swf", symbol="ScrollArrowUp_upSkin");
+}
+
+Tab
+{
+	disabledSkin: Embed(source="theme.swf", symbol="Tab_disabledSkin");
+	downSkin: Embed(source="theme.swf", symbol="Tab_downSkin");
+	overSkin: Embed(source="theme.swf", symbol="Tab_overSkin");
+	selectedDisabledSkin: Embed(source="theme.swf", symbol="TabSelected_disabledSkin");
+	selectedDownSkin: Embed(source="theme.swf", symbol="TabSelected_upSkin");
+	selectedOverSkin: Embed(source="theme.swf", symbol="TabSelected_upSkin");
+	selectedUpSkin: Embed(source="theme.swf", symbol="TabSelected_upSkin");
+	upSkin: Embed(source="theme.swf", symbol="Tab_upSkin");
+}
+
+TabNavigator
+{
+	tabHeight: 19;
+	cornerRadius: 4;
+	horizontalGap: 2;
+	horizontalAlign: left;
+	tabOffset: 8;
+	backgroundColor: #555555;
+	borderStyle: solid;
+	borderColor: #303030;
+	color: #cccccc;
+	dropShadowEnabled: false;
+	paddingTop: 0;
+	paddingBottom: 2;
+	tabStyleName: "tabs";
+	firstTabStyleName: "tabs";
+	lastTabStyleName: "tabs";
+	selectedTabTextStyleName: "selectedTabs";
+	paddingTop: 10;
+	paddingBottom: 10;
+	paddingLeft: 10;
+	paddingRight: 10;
+}
+
+.tabs
+{
+	cornerRadius: 6;
+	highlightAlphas: 0, 0;
+	fillAlphas: 1, 1;
+	fillColors: #383838, #383838;
+	backgroundAlpha: 1;
+	backgroundColor: #484848;
+	borderColor: #303030;
+	color: #cccccc;
+	textRollOverColor: #ffffff;	
+}
+
+.selectedTabs
+{
+	color: #ffa828;
+	textRollOverColor: #ffa828;
+}
+
+TextInput, TextArea
+{
+	borderStyle: solid;
+	borderColor: #303030;
+	borderThickness: 1;
+	cornerRadius: 3;
+	backgroundColor: #9098a0;
+	color: #000000;
+	paddingLeft: 2;
+	paddingRight: 2;
+	themeColor: #FFA828;
+}
+
+TileList
+{
+	borderStyle: inset;
+}
+
+TitleWindow
+{
+	closeButtonDisabledSkin: Embed(source="theme.swf",symbol="CloseButtonDisabled");
+	closeButtonDownSkin: Embed(source="theme.swf",symbol="CloseButtonDown");
+	closeButtonOverSkin: Embed(source="theme.swf",symbol="CloseButtonOver");
+	closeButtonUpSkin: Embed(source="theme.swf",symbol="CloseButtonUp");
+	titleBackgroundSkin: Embed(source="theme.swf", symbol="PanelTitleBackground");
+	backgroundColor: #484848;
+	backgroundAlpha: 1.0;
+	borderThickness: 1;
+	borderColor: #303030;
+	borderAlpha: 1.0;
+	borderStyle: solid;
+	shadowDirection: "right";
+	titleStyleName: "titleWindowTitle";
+	cornerRadius: 4;
+}
+
+.titleWindowTitle
+{
+	fontWeight: bold;
+}
+
+ToolTip
+{
+	borderSkin: Embed(source="theme.swf", symbol="ToolTip_borderSkin");
+	fontSize: 9;
+	cornerRadius: 3;
+}
+
+Tree
+{
+	defaultLeafIcon: Embed(source="theme.swf",symbol="Tree_defaultLeafIcon");
+	disclosureClosedIcon: Embed(source="theme.swf",symbol="Tree_disclosureClosedIcon");
+	disclosureOpenIcon: Embed(source="theme.swf",symbol="Tree_disclosureOpenIcon");
+	folderClosedIcon: Embed(source="theme.swf",symbol="Tree_folderClosedIcon");
+	folderOpenIcon: Embed(source="theme.swf",symbol="Tree_folderOpenIcon");
+	openDuration: 0;
+	selectionDuration: 0;
+	borderStyle: solid;
+	borderColor: #303030;
+	borderThickness: 1;
+	cornerRadius: 3;
+	backgroundColor: #9098a0;
+	alternatingItemColors: #9098a0, #959DA5;
+	rollOverColor: #a0a8b0;
+	selectionColor: #404850;
+	textSelectedColor: #ffa828;
+	color: #000000;
+}
+
+VDividedBox
+{
+	dividerSkin: Embed(source="theme.swf",symbol="DividedBox_dividerSkin");
+	horizontalCursor: Embed(source="theme.swf",symbol="DividedBox_horizontalCursor");
+	verticalCursor: Embed(source="theme.swf",symbol="DividedBox_verticalCursor");
+	verticalGap: 10;
+	dividerAffordance: 8;
+	dividerThickness: 2;
+}
+
+VSlider
+{
+	thumbDisabledSkin: Embed(source="theme.swf", symbol="VSliderThumb_disabledSkin");
+	thumbDownSkin: Embed(source="theme.swf", symbol="VSliderThumb_downSkin");
+	thumbOverSkin: Embed(source="theme.swf", symbol="VSliderThumb_overSkin");
+	thumbUpSkin: Embed(source="theme.swf", symbol="VSliderThumb_upSkin");
+	trackHighlightSkin: Embed(source="theme.swf", symbol="HSliderHighlight_Skin");
+	trackSkin: Embed(source="theme.swf", symbol="HSliderTrack_Skin");
+}
+
+VRule
+{
+	strokeWidth: 1;
+	strokeColor: #686868;
+	shadowColor: #282828;
+}
+
+.sectionDividerRule
+{
+	strokeColor: #CCCCCC;
+	strokeWidth: 1;
+	verticalCenter: 0;
+}
+
+.sectionDividerText
+{
+	fontSize: 10;
+	color: #CCCCCC;
+}
+
+.framedBox
+{
+	borderStyle: "solid";
+	borderThickness: 1;
+	borderColor: #686868;
+	cornerRadius: 3;
+	paddingLeft: 10;
+	paddingRight: 10;
+	paddingTop: 10;
+	paddingBottom: 10;
+}
+
+.gameTitleText
+{
+	fontWeight: bold;
+	fontSize: 16;
+	color: #FFFFFF;
+}
+
+InfoText
+{
+	color: #FFFFFF;
+}
+
+.flexFormItem
+{
+	fontWeight: bold;
+	color: #FFFFFF;
+}
+
+Background
+{
+	padding-left: 10;
+	padding-top: 10;
+	padding-right: 10;
+	padding-bottom: 10;
+	corner-radius: 6;
+	border-style: solid;
+	border-color: #2A2A2A;
+	background-color: #2A2A2A;
+	background-alpha: 1;
+}
+
+.titleText
+{
+	color: #FFFFFF;
+}
