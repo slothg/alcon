@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*********************************************************************************************
+	Buildfile for Alcon
+	Feb 21, 2009
+	Universal build file for AIR Projects.
+*********************************************************************************************
+-->
+<project name="Alcon" default="Info" basedir="..">
+	
+	<!-- application information -->
+	<property name="app.id"			value="com.hexagonstar.alcon"/>
+	<property name="app.name"			value="Alcon"/>
+	<property name="app.version"		value="3.5.0"/>
+	<property name="app.releasetype"	value="air"/>
+	<property name="app.copyright"	value="Copyright(c) Sascha Balkau"/>
+	<property name="app.year"			value="2009"/>
+	<property name="app.website"		value="http://www.hiddenresource.net/alcon/"/>
+	<property name="app.language"		value="EN"/>
+	
+	<!-- top class (either App.as or App.mxml. Must be in 'src' top level!) -->
+	<property name="app.class"		value="App.mxml"/>
+	<property name="app.descriptor"	value="App-app.xml"/>
+	
+	<!-- swf properties -->
+	<property name="swf.bgcolor"		value="0xC0C0C0"/>
+	<property name="swf.framerate"	value="100"/>
+	<property name="swf.width"		value="400"/>
+	<property name="swf.height"		value="640"/>
+	<property name="swf.targetname"	value="app.swf"/>
+	<property name="air.targetname"	value="alcon.air"/>
+	
+	<!-- swf meta tags -->
+	<property name="meta.title"		value="Alcon"/>
+	<property name="meta.description"	value="ActionScript logging and debugging console."/>
+	<property name="meta.publisher"	value="Hexagon Star Softworks"/>
+	<property name="meta.creator"		value="Sascha Balkau"/>
+	<property name="meta.contributor"	value="Hexagon Star Softworks"/>
+	
+	<!-- version of the used flex sdk -->
+	<property name="sdk.version"		value="3.2.0"/>
+	
+	<!-- version of the targetted flash player (9.0.124 or 10.0.12 etc.) -->
+	<property name="flp.version"		value="10.0.12"/>
+	
+	<!-- advanced compiler options -->
+	<property name="max.recursion.depth"	value="1000"/>
+	<property name="max.execution.time"	value="60"/>
+	<property name="build.optimize"		value="true"/>
+	<property name="build.benchmark"		value="true"/>
+	<property name="build.incremental"	value="false"/>
+	<property name="build.locale"			value="en_US"/>
+	
+	<!-- default project folders -->
+	<property name="bin"				value="bin"/>
+	<property name="pub"				value="pub"/>
+	<property name="src"				value="src/app"/>
+	<property name="lib"				value="lib"/>
+	<property name="doc"				value="${lib}/doc"/>
+	<property name="fla"				value="${lib}/fla"/>
+	<property name="swc"				value="${lib}/swf"/>
+	
+	<!-- additional source/swc pathes required for the project -->
+	<property name="hexagonlib.air"	value="${eclipse.workspace}/com.hexagonstar.hexagonlib/src/air"/>
+	<property name="hexagonlib.flash"	value="${eclipse.workspace}/com.hexagonstar.hexagonlib/src/flash"/>
+	<property name="hexagonlib.flex"	value="${eclipse.workspace}/com.hexagonstar.hexagonlib/src/flex"/>
+	<property name="alcon.swc.path"	value="${eclipse.workspace}/com.hexagonstar.alcon/bin/debug/as3"/>
+	
+	<!-- flex sdk pathes -->
+	<property name="sdk"				value="${flex.sdk.basepath}/${sdk.version}"/>
+	<property name="FLEX_HOME"		value="${sdk}"/>
+	<property name="fcsh"				value="${sdk}/bin/fcsh.exe"/>
+	<property name="mxmlc"			value="${sdk}/bin/mxmlc.exe"/>
+	<property name="compc"			value="${sdk}/bin/compc.exe"/>
+	
+	
+	<!-- ==================================================================================== -->
+	<!-- TARGETS                                                                              -->
+	<!-- ==================================================================================== -->
+	
+	<target name="Init Project" description="Does nothing.">
+	</target>
+	
+	
+	<target name="Info" description="Shows information on how to use this build file.">
+		<echo message ="To use this build file the following variables need to be defined for use with Ant (In case of Eclipse add these variables under Eclipse Preferences/Ant/Runtime/Properties) ..." level="info"/>
+		<echo message ="- eclipse.workspace (can be pointed to the internal variable ${workspace_loc})" level="info"/>
+		<echo message ="- flex.sdk.basepath (should be pointed to a path where Flex SDK distributions are installed into subfolders)" level="info"/>
+		<echo message ="- flashplayer.debug (should point to the executable of the Flash Player debug version)" level="info"/>
+		<echo message ="- flashplayer.release (should point to the executable of the Flash Player release version)" level="info"/>
+		<echo message ="- air.debuglauncher (should point to the AIR Debug Launcher (adl.exe))" level="info"/>
+		<echo message ="- air.developertool (should point to the AIR Developer Tool (adt.jar))" level="info"/>
+		<echo message ="- air.certificate.path (should point to the AIR application publisher certificate)" level="info"/>
+		<echo message ="- air.certificate.password (should contain the password for the AIR application publisher certificate)" level="info"/>
+	</target>
+	
+	
+	<target name="Compile Debug" description="Compiles a debug version of the Application.">
+		<prepareBuild/>
+		<compile debug="true"/>
+	</target>
+	
+	
+	<target name="Compile" description="Compiles a release version of the Application.">
+		<prepareBuild/>
+		<compile debug="false"/>
+	</target>
+	
+	
+	<target name="Launch Debug" description="Runs the Application in debug runtime.">
+		<debugLauncher/>
+	</target>
+	
+	
+	<target name="Publish" description="Publishes the Application.">
+		<publish/>
+	</target>
+	
+	
+	<!-- ==================================================================================== -->
+	<!-- MACRODEFS                                                                            -->
+	<!-- ==================================================================================== -->
+	
+	<macrodef name="prepareBuild">
+		<sequential>
+			<buildnumber file="bld/build.number"/>
+			<tstamp>
+				<format property="build.date" pattern="dd-MMMM-yyyy HH:mm" unit="minute" locale="en"/>
+			</tstamp>
+			<echo message="*** ${ant.project.name} version: ${app.version} build #${build.number}, ${build.date} ***" level="info"/>
+			<createAppInfo src.folder="${src}" bld.nr="${build.number}" bld.date="${build.date}"/>
+		</sequential>
+	</macrodef>
+	
+	
+	<macrodef name="createAppInfo">
+		<attribute name="src.folder" default=""/>
+		<attribute name="bld.nr" default=""/>
+		<attribute name="bld.date" default=""/>
+		<sequential>
+			<echo message="Generating AppInfo.as ..." level="info"/>
+			<echo file="@{src.folder}/AppInfo.as" append="false"><![CDATA[/*
+ * ${ant.project.name} v${app.version}
+ * ${app.copyright}
+ */
+package
+{
+	/**************************************************************************
+	 * AppInfo.as
+	 * Ant auto-generated application information file.
+	 **************************************************************************/
+	public final class AppInfo
+	{
+		public static const APP_ID:String			= "${app.id}";
+		public static const APP_NAME:String			= "${app.name}";
+		public static const APP_VERSION:String		= "${app.version}";
+		public static const APP_BUILD:String			= "@{bld.nr}";
+		public static const APP_BUILD_DATE:String	= "@{bld.date}";
+		public static const APP_RELEASE_TYPE:String	= "${app.releasetype}";
+		public static const APP_COPYRIGHT:String		= "${app.copyright}";
+		public static const APP_YEAR:String			= "${app.year}";
+		public static const APP_WEBSITE:String		= "${app.website}";
+		public static const APP_LANGUAGE:String		= "${app.language}";
+	}
+}]]>
+</echo>
+		</sequential>
+	</macrodef>
+	
+	
+	<macrodef name="compile">
+		<attribute name="debug" default="true"/>
+		<sequential>
+			<echo message="Compiling ${swf.targetname} for AIR Runtime ..." level="info"/>
+			<flextasks.mxmlc
+				show-unused-type-selector-warnings="false"
+				file="${basedir}/${src}/${app.class}"
+				output="${basedir}/${bin}/${swf.targetname}"
+				incremental="${build.incremental}"
+				optimize="${build.optimize}"
+				benchmark="${build.benchmark}"
+				locale="${build.locale}"
+				default-frame-rate="${swf.framerate}"
+				default-background-color="${swf.bgcolor}"
+				debug="@{debug}"
+			>
+				<load-config filename="${FLEX_HOME}/frameworks/air-config.xml"/>
+				<default-size width="${swf.width}" height="${swf.height}"/>
+				<default-script-limits
+					max-recursion-depth="${max.recursion.depth}"
+					max-execution-time="${max.execution.time}"
+				/>
+				<metadata
+					title="${meta.title}"
+					description="${meta.description}"
+					date="${build.date}"
+				>
+					<language code="${app.language}"/>
+					<publisher name="${meta.publisher}"/>
+					<creator name="${meta.creator}"/>
+					<contributor name="${meta.contributor}"/>
+				</metadata>
+				
+				<!-- Source Pathes -->
+				<source-path path-element="${hexagonlib.air}"/>
+				<source-path path-element="${hexagonlib.flash}"/>
+				<source-path path-element="${hexagonlib.flex}"/>
+				
+				<!-- Library Pathes -->
+				<!--<compiler.include-libraries dir="${swc}" append="true">
+					<include name="library.swc"/>
+				</compiler.include-libraries>-->
+				<compiler.include-libraries dir="${alcon.swc.path}" append="true">
+					<include name="alcon.swc"/>
+				</compiler.include-libraries>
+				
+				<!-- Flex Theme Path -->
+				<!-- <compiler.theme dir="${lib}/theme">
+					<include name="theme.css"/>
+				</compiler.theme> -->
+				
+			</flextasks.mxmlc>
+		</sequential>
+	</macrodef>
+	
+	
+	<macrodef name="debugLauncher">
+		<sequential>
+			<echo message="Opening ${swf.targetname} in AIR Debug Launcher ..." level="info"/>
+			<exec executable="${air.debuglauncher}" spawn="true">
+				<arg value="${basedir}\${src}\${app.descriptor}"/>
+				<arg value="${basedir}\${bin}"/>
+			</exec>
+		</sequential>
+	</macrodef>
+	
+	<macrodef name="publish">
+		<sequential>
+			<echo message="Publishing AIR application of ${app.name} ${app.version} ..." level="info"/>
+				<java jar="${air.developertool}" fork="true" failonerror="true">
+					<arg value="-package"/>
+					<arg value="-storetype"/>
+					<arg value="pkcs12"/>
+					<arg value="-keystore"/>
+					<arg value="${air.certificate.path}"/>
+					<arg value="-storepass"/>
+					<arg value="${air.certificate.password}"/>
+					<arg value="${basedir}/${pub}/${air.targetname}"/>
+					<arg value="${basedir}/${src}/${app.descriptor}"/>
+					<arg value="-C"/>
+					<arg value="${basedir}/${bin}/"/>
+					<arg value="${swf.targetname}"/>
+					<arg value="-C"/>
+					<arg value="${basedir}/${bin}"/>
+					<arg value="app.ini"/>
+				</java>
+		</sequential>
+	</macrodef>
+	
+</project>
