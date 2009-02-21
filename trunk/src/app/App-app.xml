@@ -3,7 +3,7 @@
 	<id>com.hexagonstar.alcon</id>
 	<filename>alcon</filename>
 	<name>Alcon</name>
-	<version>3.5.0</version>
+	<version>4.0.0</version>
 	<description>The logging and debugging tool for ActionScript developers.</description>
 	<copyright>Hexagon Star Softworks</copyright>
 	<initialWindow>

@@ -11,7 +11,7 @@
 	<!-- application information -->
 	<property name="app.id"			value="com.hexagonstar.alcon"/>
 	<property name="app.name"			value="Alcon"/>
-	<property name="app.version"		value="3.5.0"/>
+	<property name="app.version"		value="4.0.0"/>
 	<property name="app.releasetype"	value="air"/>
 	<property name="app.copyright"	value="Copyright(c) Sascha Balkau"/>
 	<property name="app.year"			value="2009"/>
@@ -23,7 +23,7 @@
 	<property name="app.descriptor"	value="App-app.xml"/>
 	
 	<!-- swf properties -->
-	<property name="swf.bgcolor"		value="0xC0C0C0"/>
+	<property name="swf.bgcolor"		value="0x484848"/>
 	<property name="swf.framerate"	value="100"/>
 	<property name="swf.width"		value="400"/>
 	<property name="swf.height"		value="640"/>
@@ -215,9 +215,9 @@ package
 				</compiler.include-libraries>
 				
 				<!-- Flex Theme Path -->
-				<!-- <compiler.theme dir="${lib}/theme">
+				<compiler.theme dir="${lib}/theme">
 					<include name="theme.css"/>
-				</compiler.theme> -->
+				</compiler.theme>
 				
 			</flextasks.mxmlc>
 		</sequential>

@@ -5,12 +5,11 @@ package commands
 	import com.hexagonstar.env.command.Command;
 	import com.hexagonstar.env.command.CompositeCommand;
 	import com.hexagonstar.env.command.ICommandListener;
-	import com.hexagonstar.env.console.Console;
 	import com.hexagonstar.env.event.CommandCompleteEvent;
 	import com.hexagonstar.env.event.CommandErrorEvent;
 	
-	import flash.events.ErrorEvent;
-	
+	import flash.events.ErrorEvent;	
+
 	
 	/**
 	 * This composite command is used to manage initialization of the application.
@@ -18,7 +17,7 @@ package commands
 	 * The following tasks are taken care of by this command in order:
 	 * 1. Load App Config
 	 * 2. Load Locale
-	 * 3. Load Data Files (if any)
+	 * 3. Check for Update if startup check is enabled
 	 * 4. Init KeyManager
 	 * 
 	 * @author Sascha Balkau
@@ -31,7 +30,7 @@ package commands
 		
 		private var _cmd1:LoadConfigCommand;
 		private var _cmd2:LoadLocaleCommand;
-		private var _cmd3:LoadDataFilesCommand;
+		private var _cmd3:CheckUpdateCommand;
 		private var _cmd4:InitKeyManagerCommand;
 		
 		
@@ -113,7 +112,7 @@ package commands
 					execute3();
 					break;
 				case 2:
-					notifyProgress("Data file loading complete.");
+					notifyProgress("Update checking done.");
 					execute4();
 					break;
 				case 3:
@@ -152,7 +151,7 @@ package commands
 		 */
 		private function execute3():void
 		{
-			_cmd3 = new LoadDataFilesCommand(this);
+			_cmd3 = new CheckUpdateCommand(this);
 			_cmd3.addEventListener(CommandCompleteEvent.COMPLETE, onCommandComplete);
 			_cmd3.addEventListener(ErrorEvent.ERROR, onCommandError);
 			_cmd3.execute();
@@ -178,11 +177,6 @@ package commands
 		private function setEarlySettings():void
 		{
 			var config:Config = Config.instance;
-			
-			/* We make the console available to the user right after the config
-			 * file was loaded in case data file loading takes long (e.g. on the web). */
-			Console.instance.consoleEnabled = config.consoleEnabled;
-			Console.instance.transparency = config.consoleTransparency;
 			
 			/* Set the default locale as the currently used locale. */
 			config.currentLocale = config.defaultLocale.toLocaleLowerCase();
