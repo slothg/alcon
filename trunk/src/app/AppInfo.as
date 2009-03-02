@@ -13,8 +13,8 @@ package
 		public static const APP_ID:String			= "com.hexagonstar.alcon4";
 		public static const APP_NAME:String			= "Alcon";
 		public static const APP_VERSION:String		= "4.0.0";
-		public static const APP_BUILD:String			= "76";
-		public static const APP_BUILD_DATE:String	= "03-March-2009 02:42";
+		public static const APP_BUILD:String			= "78";
+		public static const APP_BUILD_DATE:String	= "03-March-2009 03:05";
 		public static const APP_RELEASE_TYPE:String	= "air";
 		public static const APP_COPYRIGHT:String		= "Copyright(c) Sascha Balkau";
 		public static const APP_YEAR:String			= "2009";
