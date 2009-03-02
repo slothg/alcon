@@ -21,8 +21,11 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package commands
+package commands.env
 {
+	import commands.file.LoadConfigCommand;
+	import commands.file.LoadLocaleCommand;
+	
 	import model.Config;
 	
 	import com.hexagonstar.env.command.Command;
