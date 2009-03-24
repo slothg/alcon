@@ -48,7 +48,8 @@
 	<property name="max.execution.time"	value="60"/>
 	<property name="build.optimize"		value="true"/>
 	<property name="build.benchmark"		value="true"/>
-	<property name="build.incremental"	value="false"/>
+	<property name="build.incremental"	value="true"/>
+	<property name="build.keepgen"		value="false"/>
 	<property name="build.locale"			value="en_US"/>
 	
 	<!-- default project folders -->
@@ -103,6 +104,7 @@
 	
 	<target name="Compile" description="Compiles a release version of the Application.">
 		<prepareBuild/>
+		<createAppInfo src.folder="${src}" bld.nr="${build.number}" bld.date="${build.date}"/>
 		<compile debug="false"/>
 	</target>
 	
@@ -128,7 +130,6 @@
 				<format property="build.date" pattern="dd-MMMM-yyyy HH:mm" unit="minute" locale="en"/>
 			</tstamp>
 			<echo message="*** ${ant.project.name} version: ${app.version} build #${build.number}, ${build.date} ***" level="info"/>
-			<createAppInfo src.folder="${src}" bld.nr="${build.number}" bld.date="${build.date}"/>
 		</sequential>
 	</macrodef>
 	
@@ -172,11 +173,13 @@ package
 		<attribute name="debug" default="true"/>
 		<sequential>
 			<echo message="Compiling ${swf.targetname} for AIR Runtime ..." level="info"/>
+			<eclipse.incrementalBuild/>
 			<flextasks.mxmlc
 				show-unused-type-selector-warnings="false"
 				file="${basedir}/${src}/${app.class}"
 				output="${basedir}/${bin}/${swf.targetname}"
 				incremental="${build.incremental}"
+				keep-generated-actionscript="${build.keepgen}"
 				optimize="${build.optimize}"
 				benchmark="${build.benchmark}"
 				locale="${build.locale}"
