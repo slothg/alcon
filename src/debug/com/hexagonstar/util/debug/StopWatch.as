@@ -54,10 +54,10 @@ package com.hexagonstar.util.debug
 		// Variables                                                                          //
 		////////////////////////////////////////////////////////////////////////////////////////
 		
-		private var _started:Boolean = false;
-		private var _startTimeKeys:Array;
-		private var _stopTimeKeys:Array;
-		private var _title:String;
+		protected var _started:Boolean = false;
+		protected var _startTimeKeys:Array;
+		protected var _stopTimeKeys:Array;
+		protected var _title:String;
 		
 		
 		////////////////////////////////////////////////////////////////////////////////////////
@@ -187,6 +187,24 @@ package com.hexagonstar.util.debug
 		}
 		
 		
+		public function get title():String
+		{
+			return _title;
+		}
+		
+		
+		public function get startTimeKeys():Array
+		{
+			return _startTimeKeys;
+		}
+		
+		
+		public function get stopTimeKeys():Array
+		{
+			return _stopTimeKeys;
+		}
+		
+		
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Private Methods                                                                    //
 		////////////////////////////////////////////////////////////////////////////////////////
@@ -196,7 +214,7 @@ package com.hexagonstar.util.debug
 		 * 
 		 * @private
 		 */
-		private function format(v:int):String
+		protected function format(v:int):String
 		{
 			var s:String = "";
 			var l:int = v.toString().length;
