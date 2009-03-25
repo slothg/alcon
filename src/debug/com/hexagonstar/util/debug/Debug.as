@@ -405,24 +405,11 @@ package com.hexagonstar.util.debug
 			{
 				if (!_isLoggingConnected) connectLogging();
 				
-				var p:Vector.<DataPackage> = compress(o);
-				if (p.length < 2)
+				var pkg:Vector.<DataPackage> = compress(o);
+				for (var i:int = 0; i < pkg.length; i++)
 				{
-					_LoggingConnection.send("_alcon_logging", m, p[0], l);
-				}
-				else
-				{
-					for (var i:int = 0; i < p.length; i++)
-					{
-						try
-						{
-							_LoggingConnection.send("_alcon_logging", m, p[i], l);
-						}
-						catch (e:Error)
-						{
-							break;
-						}
-					}
+					var p:DataPackage = pkg[i];
+					_LoggingConnection.send("_alcon_logging", m, l, p.t, p.n, p.b);
 				}
 			}
 		}
@@ -438,7 +425,11 @@ package com.hexagonstar.util.debug
 			{
 				if (!_isLoggingConnected) connectLogging();
 				
-				_LoggingConnection.send("_alcon_logging", m, o, l, depth);
+				var p:Vector.<DataPackage> = compress(o);
+				for (var i:int = 0; i < p.length; i++)
+				{
+					_LoggingConnection.send("_alcon_logging", m, p[i], l, depth);
+				}
 			}
 		}
 		
@@ -453,7 +444,11 @@ package com.hexagonstar.util.debug
 			{
 				if (!_isLoggingConnected) connectLogging();
 				
-				_LoggingConnection.send("_alcon_logging", m, o, l, s, e);
+				var p:Vector.<DataPackage> = compress(o);
+				for (var i:int = 0; i < p.length; i++)
+				{
+					_LoggingConnection.send("_alcon_logging", m, p[i], l, s, e);
+				}
 			}
 		}
 		
