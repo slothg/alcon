@@ -58,7 +58,7 @@ package com.hexagonstar.util.debug
 	 *     }
 	 * }</pre>
 	 */
-	public final class Debug
+	public final class DebugOld
 	{
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Constants                                                                          //
@@ -114,7 +114,7 @@ package com.hexagonstar.util.debug
 		 * to be instantiated. Use any of the methods directly, e.g. <code>
 		 * Debug.trace();</code>
 		 */
-		function Debug()
+		function DebugOld()
 		{
 		}
 		
@@ -259,7 +259,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function clear():void
 		{
-			Debug.trace("[%CLR%]", 5);
+			DebugOld.trace("[%CLR%]", 5);
 		}
 		
 		
@@ -271,7 +271,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function delimiter():void
 		{
-			Debug.trace("[%DLT%]", 5);
+			DebugOld.trace("[%DLT%]", 5);
 		}
 		
 		
@@ -282,7 +282,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function pause():void
 		{
-			Debug.trace("[%PSE%]", 5);
+			DebugOld.trace("[%PSE%]", 5);
 		}
 		
 		
@@ -298,7 +298,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function time():void
 		{
-			Debug.trace("[%TME%]", 5);
+			DebugOld.trace("[%TME%]", 5);
 		}
 		
 		
@@ -327,7 +327,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function monitor(stage:Stage, pollInterval:int = 500):void
 		{
-			if (_isPollingFPS) Debug.stop();
+			if (_isPollingFPS) DebugOld.stop();
 			
 			if (_isEnabled && !_fpsMeter)
 			{
@@ -429,7 +429,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function timerInMilliSeconds():void
 		{
-			if (_stopWatch) Debug.trace(_stopWatch.timeInMilliSeconds + "ms");
+			if (_stopWatch) DebugOld.trace(_stopWatch.timeInMilliSeconds + "ms");
 		}
 		
 		
@@ -438,7 +438,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function timerInSeconds():void
 		{
-			if (_stopWatch) Debug.trace(_stopWatch.timeInSeconds + "s");
+			if (_stopWatch) DebugOld.trace(_stopWatch.timeInSeconds + "s");
 		}
 		
 		
@@ -448,7 +448,7 @@ package com.hexagonstar.util.debug
 		 */
 		public static function timerToString():void
 		{
-			if (_stopWatch) Debug.trace(_stopWatch.toString());
+			if (_stopWatch) DebugOld.trace(_stopWatch.toString());
 		}
 		
 		
@@ -463,7 +463,7 @@ package com.hexagonstar.util.debug
 			if (_stopWatch)
 			{
 				_stopWatch.stop();
-				Debug.trace(_stopWatch.toString());
+				DebugOld.trace(_stopWatch.toString());
 				if (reset) _stopWatch.reset();
 			}
 		}
