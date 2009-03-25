@@ -30,6 +30,7 @@ package com.hexagonstar.util.debug
 	import flash.utils.Timer;
 	import flash.utils.getTimer;	
 
+	
 	/**
 	 * FPSMeter can be used to measure the application's framerate and
 	 * frame render time. This class can be used on it's own to fetch
@@ -39,7 +40,7 @@ package com.hexagonstar.util.debug
 	public class FPSMeter extends EventDispatcher
 	{
 		////////////////////////////////////////////////////////////////////////////////////////
-		// Variables                                                                          //
+		// Constants                                                                          //
 		////////////////////////////////////////////////////////////////////////////////////////
 		
 		/**
@@ -48,17 +49,22 @@ package com.hexagonstar.util.debug
 		 */
 		public static const FPS_UPDATE:String = "fpsUpdate";
 		
-		private var _stage:Stage;
-		private var _timer:Timer;
-		private var _pollInterval:int;
-		private var _fps:int;
-		private var _frt:int;
-		private var _ms:int;
-		private var _isRunning:Boolean;
 		
-		private var _delay:int;
-		private var _delayMax:int = 10;
-		private var _prev:int;
+		////////////////////////////////////////////////////////////////////////////////////////
+		// Variables                                                                          //
+		////////////////////////////////////////////////////////////////////////////////////////
+		
+		protected var _stage:Stage;
+		protected var _timer:Timer;
+		protected var _pollInterval:int;
+		protected var _fps:int;
+		protected var _frt:int;
+		protected var _ms:int;
+		protected var _isRunning:Boolean;
+		
+		protected var _delay:int;
+		protected var _delayMax:int = 10;
+		protected var _prev:int;
 		
 		
 		////////////////////////////////////////////////////////////////////////////////////////
@@ -159,7 +165,7 @@ package com.hexagonstar.util.debug
 		 * Called on every Timer event.
 		 * @private
 		 */
-		private function onTimer(event:TimerEvent):void
+		protected function onTimer(e:TimerEvent):void
 		{
 			dispatchEvent(new Event(FPSMeter.FPS_UPDATE));
 		}
@@ -169,7 +175,7 @@ package com.hexagonstar.util.debug
 		 * Called on every EnterFrame event.
 		 * @private
 		 */
-		private function onEnterFrame(event:Event):void
+		protected function onEnterFrame(e:Event):void
 		{
 			var t:Number = getTimer();
 			_delay++;
