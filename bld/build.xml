@@ -9,7 +9,7 @@
 <project name="Alcon" default="Info" basedir="..">
 	
 	<!-- application information -->
-	<property name="app.id"			value="com.hexagonstar.alcon4"/>
+	<property name="app.id"			value="com.hexagonstar.alcon.v4"/>
 	<property name="app.name"			value="Alcon"/>
 	<property name="app.version"		value="4.0.0"/>
 	<property name="app.releasetype"	value="air"/>
