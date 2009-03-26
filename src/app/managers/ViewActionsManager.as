@@ -23,8 +23,18 @@
  */
 package managers
 {
-	import view.dialogs.AboutDialog;	import view.dialogs.ErrorDialog;		import mx.core.Application;	import mx.managers.PopUpManager;		import flash.display.DisplayObject;		
-		/**
+	import view.MainMenu;
+	import view.dialogs.AboutDialog;
+	import view.dialogs.ErrorDialog;
+	
+	import mx.core.Application;
+	import mx.events.CloseEvent;
+	import mx.managers.PopUpManager;
+	
+	import flash.display.DisplayObject;	
+
+	
+	/**
 	 * @author Sascha Balkau
 	 */
 	public class ViewActionsManager
@@ -36,6 +46,7 @@ package managers
 		private static var _instance:ViewActionsManager;
 		
 		private var _app:Application;
+		private var _mainMenu:MainMenu;
 				////////////////////////////////////////////////////////////////////////////////////////
 		// Public Methods                                                                     //
 		////////////////////////////////////////////////////////////////////////////////////////
@@ -59,6 +70,7 @@ package managers
 		public function init():void
 		{
 			_app = Main.instance.app;
+			_mainMenu = MainMenu.instance;
 		}
 
 		
@@ -67,7 +79,10 @@ package managers
 		 */
 		public function showAboutDialog():void
 		{
-			PopUpManager.createPopUp(DisplayObject(_app), AboutDialog, true);
+			_mainMenu.enabled = false;
+			var dialog:AboutDialog = AboutDialog(PopUpManager.createPopUp(DisplayObject(_app),
+				AboutDialog, true));
+			dialog.addEventListener(CloseEvent.CLOSE, onDialogClose, false, 0, true);
 		}
 		
 		
@@ -76,8 +91,10 @@ package managers
 		 */
 		public function showErrorDialog(msg:String, title:String = ""):void
 		{
+			_mainMenu.enabled = false;
 			var dialog:ErrorDialog = ErrorDialog(PopUpManager.createPopUp(DisplayObject(_app),
 				ErrorDialog, true));
+			dialog.addEventListener(CloseEvent.CLOSE, onDialogClose, false, 0, true);
 			if (title != "") dialog.messageTitle = title;
 			dialog.messageText = msg;
 		}
@@ -100,6 +117,15 @@ package managers
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Event Handlers                                                                     //
 		////////////////////////////////////////////////////////////////////////////////////////
+		
+		/**
+		 * onDialogClose
+		 * @private
+		 */
+		private function onDialogClose(e:CloseEvent):void
+		{
+			_mainMenu.enabled = true;
+		}
 		
 		
 		////////////////////////////////////////////////////////////////////////////////////////

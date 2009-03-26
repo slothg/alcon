@@ -528,7 +528,7 @@ TabNavigator
 	cornerRadius: 4;
 	horizontalGap: 2;
 	horizontalAlign: left;
-	tabOffset: 8;
+	tabOffset: 4;
 	backgroundColor: #555555;
 	borderStyle: solid;
 	borderColor: #303030;
@@ -661,17 +661,18 @@ VRule
 	shadowColor: #282828;
 }
 
-.sectionDividerRule
-{
-	strokeColor: #CCCCCC;
-	strokeWidth: 1;
-	verticalCenter: 0;
-}
 
-.sectionDividerText
+/** Extra Styles *****************************************************************************/
+
+ApplicationUI
 {
-	fontSize: 10;
-	color: #CCCCCC;
+	left: -2;
+	right: -2;
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+	verticalGap: 0;
 }
 
 .framedBox
@@ -686,24 +687,6 @@ VRule
 	paddingBottom: 10;
 }
 
-.gameTitleText
-{
-	fontWeight: bold;
-	fontSize: 16;
-	color: #FFFFFF;
-}
-
-InfoText
-{
-	color: #FFFFFF;
-}
-
-.flexFormItem
-{
-	fontWeight: bold;
-	color: #FFFFFF;
-}
-
 Background
 {
 	padding-left: 10;
@@ -715,11 +698,6 @@ Background
 	border-color: #2A2A2A;
 	background-color: #2A2A2A;
 	background-alpha: 1;
-}
-
-.titleText
-{
-	color: #FFFFFF;
 }
 
 .messageWindowTitle
@@ -751,4 +729,64 @@ Background
 	borderStyle: "none";
 	backgroundAlpha: 0;
 	focusAlpha: 0;
+}
+
+LoggerTextArea
+{
+	focusAlpha: 0;
+	cornerRadius: 0;
+}
+
+TabNav
+{
+	cornerRadius: 0;
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+
+TabNavPanel
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+
+InputBar
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+
+APISearchBar
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+
+.inputBarTextInput
+{
+	focusAlpha: 0;
+	cornerRadius: 0;
+}
+
+StatusBar
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+
+.statusText
+{
+	fontSize: 10;
+	color: #BBBBBB;
+	paddingLeft: 4;
 }
