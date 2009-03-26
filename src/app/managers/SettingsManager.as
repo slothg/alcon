@@ -44,6 +44,8 @@ package managers
 		public static const WINDOW_POSITION:String = "winPos";
 		public static const WINDOW_SIZE:String = "winSize";
 		
+		public static const MAX_GRAPH_MEM:String = "maxGraphMem";
+		
 		
 		////////////////////////////////////////////////////////////////////////////////////////
 		// Properties                                                                         //
@@ -75,7 +77,7 @@ package managers
 		/**
 		 * Get the given setting value from the LocalSharedObject.
 		 */
-		public function getSetting(key:String):Object
+		public function getSetting(key:String):*
 		{
 			return _so.data[key];
 		}
@@ -84,7 +86,7 @@ package managers
 		/**
 		 * Set and save the given setting.
 		 */
-		public function setSetting(key:String, value:Object):void
+		public function setSetting(key:String, value:*):void
 		{
 			_so.data[key] = value;
 			_so.flush();

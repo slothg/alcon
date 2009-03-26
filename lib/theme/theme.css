@@ -675,6 +675,66 @@ ApplicationUI
 	verticalGap: 0;
 }
 
+AppMonitor
+{
+	paddingTop: 4;
+	paddingBottom: 4;
+	paddingLeft: 0;
+	paddingRight: 0;
+	verticalGap: 0;
+}
+
+AppMonitorInfoDisplay
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 4;
+	paddingRight: 2;
+	verticalGap: -4;
+}
+
+.appMonitorInfoDisplayForm
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+	verticalGap: -4;
+	indicatorGap: 0;
+}
+
+.appMonitorCapText
+{
+	color: #AAAAAA;
+}
+
+.appMonitorFPSText
+{
+	color: #FFFFFF;
+	fontWeight: bold;
+}
+
+.appMonitorFRTText
+{
+	color: #55D4FF;
+	fontWeight: bold;
+}
+
+.appMonitorMemText
+{
+	color: #CCCC00;
+	fontWeight: bold;
+}
+
+
+AppMonitorGraph
+{
+	paddingTop: 0;
+	paddingBottom: 0;
+	paddingLeft: 0;
+	paddingRight: 0;
+}
+
 .framedBox
 {
 	borderStyle: "solid";
