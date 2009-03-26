@@ -13,7 +13,7 @@
 	<property name="app.name"			value="Alcon"/>
 	<property name="app.version"		value="4.0.0"/>
 	<property name="app.releasetype"	value="air"/>
-	<property name="app.copyright"	value="Copyright(c) Sascha Balkau"/>
+	<property name="app.copyright"	value="Hexagon Star Softworks"/>
 	<property name="app.year"			value="2009"/>
 	<property name="app.website"		value="http://www.hiddenresource.net/alcon/"/>
 	<property name="app.language"		value="EN"/>

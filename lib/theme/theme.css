@@ -721,3 +721,34 @@ Background
 {
 	color: #FFFFFF;
 }
+
+.messageWindowTitle
+{
+	fontSize: 14;
+	fontWeight: "bold";
+}
+
+.messageWindowText
+{
+	fontSize: 10;
+	color: #BBBBBB;
+	borderStyle: "none";
+	backgroundAlpha: 0;
+	focusAlpha: 0;
+}
+
+.errorDialogTitle
+{
+	fontSize: 13;
+	fontWeight: "bold";
+	color: #FF5500;
+}
+
+.errorDialogText
+{
+	fontSize: 10;
+	color: #FF5500;
+	borderStyle: "none";
+	backgroundAlpha: 0;
+	focusAlpha: 0;
+}
