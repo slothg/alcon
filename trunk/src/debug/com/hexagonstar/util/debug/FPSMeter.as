@@ -77,7 +77,7 @@ package com.hexagonstar.util.debug
 		 * @param stage The Stage object for that the FPS is being measured.
 		 * @param pollInterval Interval in milliseconds with that the FPS rate is polled.
 		 */
-		public function FPSMeter(stage:Stage, pollInterval:int = 500)
+		public function FPSMeter(stage:Stage, pollInterval:int = 50)
 		{
 			_stage = stage;
 			_pollInterval = pollInterval;

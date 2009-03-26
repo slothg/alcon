@@ -86,8 +86,8 @@ package com.hexagonstar.util.debug
 		protected static var _stage:Stage;
 		protected static var _byteArray:ByteArray;
 		
-		protected static var _LoggingConnection:LocalConnection;
-		protected static var _MonitorConnection:LocalConnection;
+		protected static var _loggingConnection:LocalConnection;
+		protected static var _monitorConnection:LocalConnection;
 		
 		protected static var _fpsMeter:FPSMeter;
 		protected static var _stopWatch:StopWatch;
@@ -107,7 +107,7 @@ package com.hexagonstar.util.debug
 		/**
 		 * monitor
 		 */
-		public static function monitor(stage:Stage, pollInterval:int = 500):void
+		public static function monitor(stage:Stage, pollInterval:int = 50):void
 		{
 			if (_isMonitoring) Debug.stop();
 			
@@ -161,7 +161,7 @@ package com.hexagonstar.util.debug
 		public static function trace(data:*, level:int = 1):void
 		{
 			if (level >= _filterLevel)
-				send("onTraceData", data, level);
+				sendPkg("onTraceData", data, level);
 		}
 		
 		
@@ -281,7 +281,7 @@ package com.hexagonstar.util.debug
 				{
 					if (!_isLoggingConnected) connectLogging();
 					
-					_LoggingConnection.send("_alcon_logging", "onStopWatchData",
+					_loggingConnection.send("_alcon_logging", "onStopWatchData",
 						_stopWatch.title,
 						_stopWatch.startTimeKeys,
 						_stopWatch.stopTimeKeys);
@@ -351,7 +351,7 @@ package com.hexagonstar.util.debug
 		}
 		public static function set filterLevel(v:int):void
 		{
-			if (v >= 0 && v < 5) _filterLevel = v;
+			if (v >= 0) _filterLevel = v;
 		}
 		
 		
@@ -382,7 +382,7 @@ package com.hexagonstar.util.debug
 		{
 			if (_isEnabled)
 			{
-				_MonitorConnection.send("_alcon_monitor", "onMonitorData",
+				_monitorConnection.send("_alcon_monitor", "onMonitorData",
 					_fpsMeter.fps,
 					_stage.frameRate,
 					_fpsMeter.frt,
@@ -399,7 +399,21 @@ package com.hexagonstar.util.debug
 		 * Sends the specified data to Alcon.
 		 * @private
 		 */
-		protected static function send(m:String, o:Object = null, l:int = 1):void
+		protected static function send(m:String, o:Object):void
+		{
+			if (_isEnabled)
+			{
+				if (!_isLoggingConnected) connectLogging();
+				_loggingConnection.send("_alcon_logging", m, o);
+			}
+		}
+		
+		
+		/**
+		 * Sends the specified data to Alcon.
+		 * @private
+		 */
+		protected static function sendPkg(m:String, o:Object = null, l:int = 1):void
 		{
 			if (_isEnabled)
 			{
@@ -409,7 +423,7 @@ package com.hexagonstar.util.debug
 				for (var i:int = 0; i < pkg.length; i++)
 				{
 					var p:DataPackage = pkg[i];
-					_LoggingConnection.send("_alcon_logging", m, l, p.t, p.n, p.b);
+					_loggingConnection.send("_alcon_logging", m, l, p.t, p.n, p.b);
 				}
 			}
 		}
@@ -428,7 +442,7 @@ package com.hexagonstar.util.debug
 				var p:Vector.<DataPackage> = compress(o);
 				for (var i:int = 0; i < p.length; i++)
 				{
-					_LoggingConnection.send("_alcon_logging", m, p[i], l, depth);
+					_loggingConnection.send("_alcon_logging", m, p[i], l, depth);
 				}
 			}
 		}
@@ -447,7 +461,7 @@ package com.hexagonstar.util.debug
 				var p:Vector.<DataPackage> = compress(o);
 				for (var i:int = 0; i < p.length; i++)
 				{
-					_LoggingConnection.send("_alcon_logging", m, p[i], l, s, e);
+					_loggingConnection.send("_alcon_logging", m, p[i], l, s, e);
 				}
 			}
 		}
@@ -526,10 +540,10 @@ package com.hexagonstar.util.debug
 		{
 			_isLoggingConnected = true;
 			
-			_LoggingConnection = new LocalConnection();
-			_LoggingConnection.addEventListener(AsyncErrorEvent.ASYNC_ERROR, onAsyncError);
-			_LoggingConnection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
-			_LoggingConnection.addEventListener(StatusEvent.STATUS, onStatus);
+			_loggingConnection = new LocalConnection();
+			_loggingConnection.addEventListener(AsyncErrorEvent.ASYNC_ERROR, onAsyncError);
+			_loggingConnection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
+			_loggingConnection.addEventListener(StatusEvent.STATUS, onStatus);
 			
 			_byteArray = new ByteArray();
 		}
@@ -543,10 +557,10 @@ package com.hexagonstar.util.debug
 		{
 			_isMonitorConnected = true;
 			
-			_MonitorConnection = new LocalConnection();
-			_MonitorConnection.addEventListener(AsyncErrorEvent.ASYNC_ERROR, onAsyncError);
-			_MonitorConnection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
-			_MonitorConnection.addEventListener(StatusEvent.STATUS, onStatus);
+			_monitorConnection = new LocalConnection();
+			_monitorConnection.addEventListener(AsyncErrorEvent.ASYNC_ERROR, onAsyncError);
+			_monitorConnection.addEventListener(SecurityErrorEvent.SECURITY_ERROR, onSecurityError);
+			_monitorConnection.addEventListener(StatusEvent.STATUS, onStatus);
 		}
 		
 		

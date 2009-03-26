@@ -71,6 +71,8 @@ package
 		 */
 		private function test():void
 		{
+			Debug.monitor(stage);
+			
 			Debug.trace("Test!");
 			Debug.trace(1055);
 			Debug.trace([55, 77, 23]);
