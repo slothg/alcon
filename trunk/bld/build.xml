@@ -38,7 +38,7 @@
 	<property name="meta.contributor"	value="Hexagon Star Softworks"/>
 	
 	<!-- version of the used flex sdk -->
-	<property name="sdk.version"		value="3.2.0"/>
+	<property name="sdk.version"		value="3.3.0"/>
 	
 	<!-- version of the targetted flash player (9.0.124 or 10.0.12 etc.) -->
 	<property name="flp.version"		value="10.0.12"/>
