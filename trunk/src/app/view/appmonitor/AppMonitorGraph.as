@@ -21,18 +21,13 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package view.components
+package view.appmonitor
 {
-	import managers.SettingsManager;
-	
 	import mx.controls.Image;
-	
-	import flash.display.Bitmap;
+	import flash.display.Bitmap;
 	import flash.display.BitmapData;
-	import flash.geom.Rectangle;		
-
-	
-	/**
+	import flash.geom.Rectangle;
+		/**
 	 * AppMonitorGraph Class
 	 * @author Sascha Balkau <sascha@hexagonstar.com>
 	 */

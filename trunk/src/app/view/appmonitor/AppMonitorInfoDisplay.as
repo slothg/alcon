@@ -21,13 +21,13 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package view.components
+package view.appmonitor
 {
 	import mx.containers.Form;
 	import mx.containers.FormItem;
 	import mx.containers.VBox;
 	import mx.controls.Label;
-	import mx.core.ScrollPolicy;	
+	import mx.core.ScrollPolicy;
 
 	
 	/**
