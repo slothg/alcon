@@ -23,8 +23,19 @@
  */
 package io
 {
-	import model.Config;		import util.Log;		import com.hexagonstar.env.event.FileIOEvent;	import com.hexagonstar.io.file.QueueFileReader;	import com.hexagonstar.io.file.types.IFile;	import com.hexagonstar.io.file.types.TextFile;	import com.hexagonstar.io.file.types.XMLFile;		import flash.events.ErrorEvent;	import flash.events.Event;	
-	[Event(name="complete", type="flash.events.Event")]
+	import model.Config;
+
+	import util.Log;
+
+	import com.hexagonstar.env.event.FileIOEvent;
+	import com.hexagonstar.io.file.types.IFile;
+	import com.hexagonstar.io.file.types.TextFile;
+	import com.hexagonstar.io.file.types.XMLFile;
+
+	import flash.events.ErrorEvent;
+	import flash.events.Event;
+
+	[Event(name="complete", type="flash.events.Event")]
 	[Event(name="error", type="flash.events.ErrorEvent")]
 	
 	
@@ -79,7 +90,7 @@ package io
 			super.load();
 			
 			_hasNotified = false;
-			_config = Config.instance;
+			_config = Main.config;
 			_config.init();
 			
 			var file:IFile = (IS_XML) ? new XMLFile() : new TextFile();

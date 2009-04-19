@@ -26,15 +26,11 @@ package managers
 	import view.MainMenu;
 	import view.dialogs.AboutDialog;
 	import view.dialogs.ErrorDialog;
-	
-	import mx.core.Application;
+	import mx.core.Application;
 	import mx.events.CloseEvent;
 	import mx.managers.PopUpManager;
-	
-	import flash.display.DisplayObject;	
-
-	
-	/**
+	import flash.display.DisplayObject;
+		/**
 	 * @author Sascha Balkau
 	 */
 	public class ViewActionsManager
@@ -69,8 +65,8 @@ package managers
 		 */
 		public function init():void
 		{
-			_app = Main.instance.app;
-			_mainMenu = MainMenu.instance;
+			_app = Main.app;
+			_mainMenu = Main.ui.mainMenu;
 		}
 
 		
