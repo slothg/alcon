@@ -25,19 +25,13 @@ package commands.env
 {
 	import commands.file.LoadConfigCommand;
 	import commands.file.LoadLocaleCommand;
-	
-	import model.Config;
-	
-	import com.hexagonstar.env.command.Command;
-	import com.hexagonstar.env.command.CompositeCommand;
+	import model.Config;
+	import com.hexagonstar.env.command.CompositeCommand;
 	import com.hexagonstar.env.command.ICommandListener;
 	import com.hexagonstar.env.event.CommandCompleteEvent;
 	import com.hexagonstar.env.event.CommandErrorEvent;
-	
-	import flash.events.ErrorEvent;	
-
-	
-	/**
+	import flash.events.ErrorEvent;
+			/**
 	 * This composite command is used to manage initialization of the application.
 	 * 
 	 * The following tasks are taken care of by this command in order:
@@ -202,7 +196,7 @@ package commands.env
 		 */
 		private function setEarlySettings():void
 		{
-			var config:Config = Config.instance;
+			var config:Config = Main.config;
 			
 			/* Set the default locale as the currently used locale. */
 			config.currentLocale = config.defaultLocale.toLocaleLowerCase();
