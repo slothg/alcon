@@ -62,6 +62,14 @@ package view.appmonitor
 		
 		
 		/**
+		 * updateLocale
+		 */
+		public function updateLocale():void
+		{
+		}
+		
+		
+		/**
 		 * Initializes AppMonitorGraph.
 		 */
 		public function init():void
