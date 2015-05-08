@@ -1,0 +1,3 @@
+Alcon (abbreviation for ActionScript Logging Console) is a lightweight debugging tool for ActionScript 2.0/3.0 developers that provides a way to output debugging information (traces) from the debugged application to an external output panel.
+
+It uses ActionScript’s LocalConnection to send the debugging information from the included Debug class to the Alcon Console. This way the developer doesn’t need to rely on the Flash/Flex IDE for debugging. Additionally Alcon offers some helpful features that make debugging easier.
